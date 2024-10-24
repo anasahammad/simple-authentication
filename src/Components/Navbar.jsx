@@ -73,10 +73,15 @@ const Navbar =   ({session}) => {
                       {session?.user?.name}
                     </p>
                     
-                    <form action={Logout}>
+                    {session?.user ? <form action={Logout}>
 
-                    <button type="submit" className="block px-4 py-2">Sign Out</button>
-                    </form>
+<button type="submit" className="block px-4 py-2">Sign Out</button>
+</form> : 
+ <button className="block px-4 py-2">
+  <Link href="/login">Login</Link>
+ </button>
+}
+                    
                   </div>
                 )}
                
